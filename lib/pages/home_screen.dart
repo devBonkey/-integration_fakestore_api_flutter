@@ -16,10 +16,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // variable to call and store future list of posts
   Future<List<Product>> productsFuture = getProducts();
 
-  // function to fetch data from api and return future list of Products
   static Future<List<Product>> getProducts() async {
     var url = Uri.parse("https://fakestoreapi.com/products");
     final response =
@@ -79,7 +77,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Navigate to add product page
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -87,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           );
         },
-        backgroundColor: Colors.green.withOpacity(1),
+        backgroundColor: Colors.green.shade800,
         child: const Icon(Icons.add),
       ),
     );
